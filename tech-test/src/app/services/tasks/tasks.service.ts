@@ -1,7 +1,7 @@
 import { Injectable, Injector } from "@angular/core";
-import { Task } from "@interfaces/task.interface";
+import { Task, TaskStatus } from "@interfaces/task.interface";
 import { ApiService } from "@shared/classes/api.class";
-import { Observable } from "rxjs";
+import { map, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -13,5 +13,20 @@ export class TasksService extends ApiService {
 
   loadAllTasks(): Observable<Task[]> {
     return this.get<Task[]>("tasks");
+  }
+
+  loadTaskById(taskId: number): Observable<Task> {
+    return this.get<Task>(`tasks/${taskId}`).pipe(
+      map((task) => {
+        if (task.done === true) {
+          return { ...task, status: TaskStatus.Done };
+        }
+
+        if (task.done === false) {
+          return { ...task, status: TaskStatus.InProgress };
+        }
+        return task;
+      })
+    );
   }
 }

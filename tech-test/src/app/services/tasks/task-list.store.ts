@@ -1,9 +1,7 @@
-import { Data } from "./../../../../node_modules/webdriver-js-extender/built/spec/mockdriver.d";
-import { Injectable, Injector } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Task, TaskStatus } from "@interfaces/task.interface";
 import { LoadingService } from "@services/loading/loading.service";
 import { MessageService } from "@services/messages/message.service";
-import { ApiService } from "@shared/classes/api.class";
 import {
   BehaviorSubject,
   catchError,
@@ -19,7 +17,6 @@ import { TasksService } from "./tasks.service";
 })
 export class TaskListStore {
   private _taskList$ = new BehaviorSubject<Task[]>([]);
-
   public taskListStore$: Observable<Task[]> = this._taskList$.asObservable();
 
   constructor(

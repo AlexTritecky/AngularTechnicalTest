@@ -1,0 +1,3 @@
+<div class="task-container" *ngIf="taskData$ | async as taskData">
+  <app-task-card [task]="taskData"> </app-task-card>
+</div>
