@@ -7,6 +7,7 @@ import {
   catchError,
   map,
   Observable,
+  shareReplay,
   tap,
   throwError,
 } from "rxjs";
@@ -52,6 +53,19 @@ export class TaskListStore {
     );
   }
 
+  deleteTask(taskId: number) {
+    this.tasksService
+      .deleteTask(taskId)
+      .pipe(
+        tap((res) => {
+          this.message.showErrors("Task deleted");
+
+          return this.loadAllCourses();
+        })
+      )
+      .subscribe();
+  }
+
   checkStatus(array: Task[]): Task[] {
     return array.map((item) => {
       if (item.done === true) {
@@ -64,5 +78,46 @@ export class TaskListStore {
 
       return item;
     });
+  }
+
+  saveTask(taskId: number, changes: Partial<Task>): Observable<Task> {
+    const tasks = this._taskList$.getValue();
+
+    const index = tasks.findIndex((task) => task.id == taskId);
+
+    const newTask: Task = {
+      ...tasks[index],
+      ...changes,
+    };
+
+    const newTasks: Task[] = tasks.slice(0);
+
+    newTasks[index] = newTask;
+
+    this._taskList$.next(newTasks);
+
+    return this.tasksService.saveTask(taskId, changes).pipe(
+      tap(() => this.loadAllCourses()),
+      catchError((err) => {
+        const message = "Could not save course";
+        console.log(message, err);
+        this.message.showErrors(message);
+        return throwError(err);
+      }),
+      shareReplay()
+    );
+  }
+
+  addTask(changes: Partial<Task>): Observable<Task> {
+    return this.tasksService.addNewTask(changes).pipe(
+      tap(() => this.loadAllCourses()),
+      catchError((err) => {
+        const message = "Could not add new task";
+        console.log(message, err);
+        this.message.showErrors(message);
+        return throwError(err);
+      }),
+      shareReplay()
+    );
   }
 }

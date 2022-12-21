@@ -4,7 +4,7 @@ import { COMPONENTS } from "./components";
 import { MODULES } from "./modules";
 
 @NgModule({
-  declarations: [...COMPONENTS, ],
+  declarations: [...COMPONENTS],
   imports: [CommonModule, ...MODULES],
   exports: [...COMPONENTS, ...MODULES],
 })

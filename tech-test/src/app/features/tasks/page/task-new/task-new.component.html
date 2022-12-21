@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Task Label" formControlName="label" />
+    <mat-error *ngIf="newsFormControls['label'].invalid">
+      Task label is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Description" formControlName="description" />
+    <mat-error *ngIf="newsFormControls['description'].invalid">
+      Task description is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Category" formControlName="category" />
+    <mat-error *ngIf="newsFormControls['description'].invalid">
+      Task category is required
+    </mat-error>
+  </mat-form-field>
+
+  <p><mat-checkbox formControlName="done">Status</mat-checkbox></p>
+
+  <button mat-raised-button>Submit</button>
+</form>

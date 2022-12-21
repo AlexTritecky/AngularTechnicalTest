@@ -24,7 +24,8 @@
         View Task
       </button>
 
-      <button mat-button mat-raised-button color="accent">Edit</button>
+      <button mat-button mat-raised-button color="accent" (click)="editTask(task)">Edit</button>
+      <button mat-button mat-raised-button color="warn" (click)="deleteTask(task.id)">Delete</button>
     </mat-card-actions>
   </mat-card>
 </div>

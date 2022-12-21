@@ -1,9 +1,12 @@
 <div class="tasks-panel">
-  <h3>Tasks List</h3>
+  <div class="title">
+    <h3>Tasks List</h3>
+    <button mat-button mat-raised-button (click)="createNew()" color="primary">New</button>
+  </div>
 
   <mat-tab-group>
     <mat-tab label="All tasks">
-        <app-task-list [tasks]="tasksList$ | async"></app-task-list>
+      <app-task-list [tasks]="tasksList$ | async"></app-task-list>
     </mat-tab>
 
     <mat-tab label="Done tasks">

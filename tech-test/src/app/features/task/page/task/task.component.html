@@ -1,3 +1,8 @@
 <div class="task-container" *ngIf="taskData$ | async as taskData">
+  <h2>Task View</h2>
   <app-task-card [task]="taskData"> </app-task-card>
+
+  <button mat-button mat-raised-button color="primary" [routerLink]="['/']">
+    Back to the Tasks
+  </button>
 </div>

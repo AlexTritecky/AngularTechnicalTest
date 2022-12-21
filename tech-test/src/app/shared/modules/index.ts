@@ -6,6 +6,10 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 export const MODULES = [
   MatProgressSpinnerModule,
@@ -15,5 +19,10 @@ export const MODULES = [
   MatToolbarModule,
   MatButtonModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatDialogModule,
+  FormsModule,
+  ReactiveFormsModule,
+  MatInputModule,
+  MatCheckboxModule
 ];

@@ -29,4 +29,16 @@ export class TasksService extends ApiService {
       })
     );
   }
+
+  saveTask(taskId: number, changes: Partial<Task>): Observable<Task> {
+    return this.put(`tasks/${taskId}`, changes);
+  }
+
+  addNewTask(changes: Partial<Task>): Observable<Task> {
+    return this.post(`tasks`, changes);
+  }
+
+  deleteTask(taskId: number): Observable<Task[]> {
+    return this.delete<Task[]>(`tasks/${taskId}`);
+  }
 }

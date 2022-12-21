@@ -1,17 +1,80 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "label": "Kitchen Cleanup",
-      "description": "Clean my dirty kitchen",
-      "category": "house",
-      "done": false
+      "label": "Test",
+      "description": "Test",
+      "category": "Test",
+      "done": true,
+      "id": 1
     },
     {
       "id": 2,
       "label": "Taxes",
       "description": "Start doing my taxes and contact my accountant jhon for advice",
       "category": "bureaucracy",
+      "done": true
+    },
+    {
+      "id": 3,
+      "label": "Total War",
+      "description": "Total War Warhammer 3 ",
+      "category": "Game",
+      "done": false
+    },
+    {
+      "id": 4,
+      "label": "Test",
+      "description": "aadad",
+      "category": "asdasdasd",
+      "done": false
+    },
+    {
+      "id": 5,
+      "label": "Finish",
+      "description": "Yess",
+      "category": "GAMES",
+      "done": false
+    },
+    {
+      "id": 6,
+      "label": "Finishss",
+      "description": "ssssass",
+      "category": "ssasas",
+      "done": true
+    },
+    {
+      "id": 7,
+      "label": "You in the army",
+      "description": "You in the army",
+      "category": "Army",
+      "done": false
+    },
+    {
+      "id": 8,
+      "label": "adasdaa",
+      "description": "asdasdasda",
+      "category": "asdasdasdasd",
+      "done": false
+    },
+    {
+      "id": 9,
+      "label": "asdasd",
+      "description": "asdasdasdasd",
+      "category": "asdasdasd",
+      "done": false
+    },
+    {
+      "id": 10,
+      "label": "FINISHTEST",
+      "description": "asaadasdasd",
+      "category": "asdasdasdasd",
+      "done": true
+    },
+    {
+      "id": 11,
+      "label": "asdasdasdasdads",
+      "description": "asdasdasdasdasd",
+      "category": "asdasdasdasd",
       "done": true
     }
   ]

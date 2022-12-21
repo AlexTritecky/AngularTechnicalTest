@@ -6,8 +6,9 @@ import { CommonModule } from "@angular/common";
 
 import { TasksRoutingModule } from "./tasks-routing.module";
 
+
 @NgModule({
-  declarations: [...PAGE, ...PARTIALS ],
+  declarations: [...PAGE, ...PARTIALS],
   imports: [CommonModule, TasksRoutingModule, SharedModule],
 })
 export class TasksModule {}

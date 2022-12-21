@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>{{ task.label }}</h2>
+
+<mat-dialog-content [formGroup]="formTask">
+  <mat-form-field>
+    <input matInput placeholder="Task Label" formControlName="label" />
+    <mat-error *ngIf="newsFormControls['label'].invalid">
+      Task label is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Description" formControlName="description" />
+    <mat-error *ngIf="newsFormControls['description'].invalid">
+      Task description is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Category" formControlName="category" />
+    <mat-error *ngIf="newsFormControls['description'].invalid">
+      Task category is required
+    </mat-error>
+  </mat-form-field>
+
+  <p><mat-checkbox formControlName="done">Status</mat-checkbox></p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button (click)="close()">Close</button>
+
+  <button mat-raised-button color="primary" #saveButton (click)="save()">
+    Save
+  </button>
+</mat-dialog-actions>
