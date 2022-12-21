@@ -1,0 +1,17 @@
+<div class="tasks-panel">
+  <h3>Tasks List</h3>
+
+  <mat-tab-group>
+    <mat-tab label="All tasks">
+        <app-task-list [tasks]="tasksList$ | async"></app-task-list>
+    </mat-tab>
+
+    <mat-tab label="Done tasks">
+      <app-task-list [tasks]="doneTasksList$ | async"></app-task-list>
+    </mat-tab>
+
+    <mat-tab label="In progress tasks">
+      <app-task-list [tasks]="inProgressTasksList$ | async"></app-task-list>
+    </mat-tab>
+  </mat-tab-group>
+</div>

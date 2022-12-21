@@ -6,6 +6,7 @@
     "paths": {
       "@env/*": ["app/environments/*"],
       "@features/*": ["app/features/*"],
+      "@services/*": ["app/services/*"],
       "@interfaces/*": ["app/models/interfaces/*"],
       "@constants/*": ["app/models/constants/*"],
       "@shared/*": ["app/shared/*"]

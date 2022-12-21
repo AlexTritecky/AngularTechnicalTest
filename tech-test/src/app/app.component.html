@@ -1,1 +1,28 @@
-<h1 class="title-text">Welcome to Origin's Angular Technical Test: {{title}}</h1>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #start (click)="start.close()">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" class="link">
+        <mat-icon>library_books</mat-icon>
+        <span>Tasks</span>
+      </a>
+
+      <a mat-list-item routerLink="/search-tasks" class="link">
+        <mat-icon>search</mat-icon>
+        <span>Search Tasks</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar color="primary">
+    <div class="toolbar-tools">
+      <button mat-icon-button (click)="start.open('mouse')">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <app-message></app-message>
+
+  <app-loader></app-loader>
+
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

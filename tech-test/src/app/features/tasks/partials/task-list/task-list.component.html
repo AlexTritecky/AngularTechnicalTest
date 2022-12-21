@@ -1,0 +1,30 @@
+<div class="list" *ngIf="tasks">
+  <mat-card *ngFor="let task of tasks" class="task-card mat-elevation-z7">
+    <div class="tasks-text">
+      <mat-card-header>
+        <mat-card-title>{{ task.label }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>Category: {{ task.category }}</p>
+        <p class="description">{{ task.description }}</p>
+      </mat-card-content>
+      <mat-card-content>
+        <p>Status: {{ task.status }}</p>
+      </mat-card-content>
+    </div>
+
+    <mat-card-actions class="tasks-actions">
+      <button
+        mat-button
+        mat-raised-button
+        color="primary"
+        [routerLink]="['/courses', task.id]"
+      >
+        View Task
+      </button>
+
+      <button mat-button mat-raised-button color="accent">Edit</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
